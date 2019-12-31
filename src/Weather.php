@@ -17,7 +17,7 @@ class Weather{
     protected $key;
     protected $guzzleOptions = [];
 
-    public function __construct(string $key)
+    public function __construct($key)
     {
         $this->key = $key;
     }
@@ -76,5 +76,15 @@ class Weather{
             // 并将调用异常作为 $previousException 传入。
             throw new HttpException($e->getMessage(), $e->getCode(), $e);
         }
+    }
+
+    public function getLiveWeather($city, $format = 'json')
+    {
+        return $this->getWeather($city, 'base', $format);
+    }
+
+    public function getForecastsWeather($city, $format = 'json')
+    {
+        return $this->getWeather($city, 'all', $format);
     }
 }
