@@ -21,6 +21,8 @@
 
 [![Build Status](https://travis-ci.org/LanceZhen/weather.svg?branch=master)](https://travis-ci.org/LanceZhen/weather)
 
+![StyleCI build status](https://github.styleci.io/repos/230884176/shield) 
+
 ## 安装
 
 ```sh
