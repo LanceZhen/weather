@@ -1,10 +1,14 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Administrator
- * Date: 2019/12/30
- * Time: 14:45
+
+/*
+ * This file is part of the lancezhen/weather.
+ *
+ * (c) lancezhen<i@lancezhen.me>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
  */
+
 namespace LanceZhen\Weather\Tests;
 
 use GuzzleHttp\Client;
@@ -16,7 +20,8 @@ use LanceZhen\Weather\Weather;
 use Mockery\Matcher\AnyArgs;
 use PHPUnit\Framework\TestCase;
 
-class WeatherTest extends TestCase{
+class WeatherTest extends TestCase
+{
     public function testGetWeather()
     {
         // json
@@ -53,6 +58,7 @@ class WeatherTest extends TestCase{
 
         $this->assertSame('<hello>content</hello>', $w->getWeather('深圳', 'all', 'xml'));
     }
+
     public function testGetWeatherWithGuzzleRuntimeException()
     {
         $client = \Mockery::mock(Client::class);

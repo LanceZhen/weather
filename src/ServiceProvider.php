@@ -1,10 +1,14 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Administrator
- * Date: 2019/12/30
- * Time: 16:24
+
+/*
+ * This file is part of the lancezhen/weather.
+ *
+ * (c) lancezhen<i@lancezhen.me>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
  */
+
 namespace LanceZhen\Weather;
 
 class ServiceProvider extends \Illuminate\Support\ServiceProvider
@@ -13,7 +17,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
 
     public function register()
     {
-        $this->app->singleton(Weather::class, function(){
+        $this->app->singleton(Weather::class, function () {
             return new Weather(config('services.weather.key'));
         });
 
